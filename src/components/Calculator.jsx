@@ -5,6 +5,7 @@ import './Calculator.css';
 const Calculator = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
+  const [darkMode, setDarkMode] = useState(false);
 
   const handleClick = (value) => {
     setInput(input + value);
@@ -23,8 +24,17 @@ const Calculator = () => {
     }
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="calculator">
+    <div className={`calculator ${darkMode ? 'dark' : ''}`}>
+      <div className="header">
+        <button onClick={toggleDarkMode} className="dark-mode-toggle">
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
       <div className="display">
         <div className="input">{input}</div>
         <div className="result">{result}</div>

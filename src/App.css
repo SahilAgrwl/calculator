@@ -5,4 +5,9 @@
   align-items: center;
   height: 100vh;
   background-color: #f7f7f7;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app.dark {
+  background-color: #222;
 }
